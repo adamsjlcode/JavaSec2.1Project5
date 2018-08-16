@@ -54,7 +54,7 @@ public class Welcome
 		try
 		{
 			window.setContentPane (new JLabel(new ImageIcon
-			(ImageIO.read (this.getClass ( ).getResource ("/Welcome.jpg")))));
+			(ImageIO.read (this.getClass ( ).getResource ("/img/Welcome.jpg")))));
 			file = window.getContentPane ( );
 		}
 		catch (Exception IO)

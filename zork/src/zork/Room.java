@@ -321,21 +321,21 @@ public class Room
 		String room = "";	//Creates Room Image
 
 		if (mChance == true&&wChance == true&&pChance == true)	
-			room =  ("|_P__M__W_|");
+			room =  ("|_P_M_W_|");
 		else if(mChance == true&&wChance == true&&pChance == false)
-			room = ("|____M__W_|");
+			room = ("|___M_W_|");
 		else if(mChance == true&&wChance == false&&pChance == false)
-			room = ("|____M____|");
+			room = ("|___M___|");
 		else if(mChance == false&&wChance == true&&pChance == false)
-			room = ("|_______W_|");
+			room = ("|_____W_|");
 		else if(mChance == false&&wChance == false&&pChance == true)
-			room = ("|_P_______|");
+			room = ("|_P_____|");
 		else if(mChance == false&&wChance == true&&pChance == true)
-			room = ("|_P_____W_|");	
+			room = ("|_P___W_|");	
 		else if(mChance == true&&wChance == false&&pChance == true)
-			room = ("|_P__M____|");
+			room = ("|_P_M___|");
 		else 
-			room += "|_________|";
+			room += "|_______|";
 		return room;
 	}//End toString()
 }//End Room

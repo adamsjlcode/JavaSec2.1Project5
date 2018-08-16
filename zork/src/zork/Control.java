@@ -103,8 +103,8 @@ public class Control extends JFrame
 
 		try
 		{
-			window.setContentPane (new JLabel(new ImageIcon(ImageIO.read 
-			(this.getClass ( ).getResource ("/Dungeon.jpg")))));
+			window.setContentPane (new JLabel(new ImageIcon
+			(ImageIO.read (this.getClass ( ).getResource ("/img/Dungeon.jpg")))));
 			file = window.getContentPane ( );
 		}
 		catch (Exception IO)
@@ -118,24 +118,24 @@ public class Control extends JFrame
 		window.setSize (1000, 800);
 		map = new JTextArea (Driver.zork.toString ( ));
 		map.setEditable (false);
-		map.setBounds (100, 100, 500, 150);
+		map.setBounds (250, 100, 600, 150);
 		map.setFont (dungeon);
-		map.setForeground (Color.WHITE);
+		map.setForeground (Color.RED);
 		map.setOpaque (false);
 		playerInfo = new JTextArea ("Player Health: " + Driver.zork.getHealth ( )+
 									"\nPlayer Weapon: " + 
 									Driver.zork.one.getWeapon());
-		playerInfo.setBounds (100, 300, 400, 250);
-		playerInfo.setForeground (Color.BLUE);
+		playerInfo.setBounds (250, 300, 400, 250);
+		playerInfo.setForeground (Color.WHITE);
 		playerInfo.setFont (players);
 		playerInfo.setOpaque (false);
 		playingText = new JTextArea();
 		playing = new JScrollPane (playingText);
-		playing.setBounds (600, 100, 350, 350);
-		upButton.setBounds (410, 550, 200, 40);		
-		downButton.setBounds (410, 650, 200, 40);
-		leftButton.setBounds (210, 600, 200, 40);
-		rightButton.setBounds (610, 600, 200, 40);		
+		playing.setBounds (600, 300, 350, 350);
+		upButton.setBounds (310, 550, 75, 40);		
+		downButton.setBounds (310, 650, 75, 40);
+		leftButton.setBounds (210, 600, 75, 40);
+		rightButton.setBounds (410, 600, 75, 40);		
 		upButton.addActionListener (new ButtonListener());
 		downButton.addActionListener (new ButtonListener());
 		leftButton.addActionListener (new ButtonListener());
@@ -259,8 +259,8 @@ public class Control extends JFrame
 		window.remove (playerInfo); 
 		playerInfo = new JTextArea ("Player Health: " + Driver.zork.getHealth ( )+
 			"\nPlayer Weapon: " + Driver.zork.one.getWeapon());
-		playerInfo.setBounds (100, 300, 400, 250);
-		playerInfo.setForeground (Color.BLUE);
+		playerInfo.setBounds (250, 300, 400, 250);
+		playerInfo.setForeground (Color.WHITE);
 		playerInfo.setFont (players);
 		playerInfo.setOpaque (false);
 		window.add (playerInfo); 
@@ -272,14 +272,9 @@ public class Control extends JFrame
 	 */
 	public void updateMap()
 	{
-		window.remove (map); 
-		map = new JTextArea (Driver.zork.toString ( ));
-		map.setEditable (false);
-		map.setBounds (100, 100, 500, 150);
-		map.setFont (dungeon);
-		map.setForeground (Color.WHITE);
-		map.setOpaque (false);
-		window.add (map); 
+		window.remove (map);
+		map.setText(Driver.zork.toString ( ));
+		window.add (map);
 		window.repaint ( );
 	}//End updateMap()
 			
